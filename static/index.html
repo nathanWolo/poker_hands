@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rush Tracker</title>
+  <link rel="stylesheet" href="/static/css/app.css?v=gto-replay" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <aside class="nav">
+    <div class="brand">
+      <div class="brand-mark">RT</div>
+      <div>
+        <strong>Rush Tracker</strong>
+        <span>GGPoker cash</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#/overview" data-route="overview">Overview</a>
+      <a href="#/sessions" data-route="sessions">Sessions</a>
+      <a href="#/hands" data-route="hands">Hands</a>
+      <a href="#/reports" data-route="reports">Reports</a>
+      <a href="#/matrix" data-route="matrix">Starting hands</a>
+      <a href="#/players" data-route="players">Players</a>
+      <a href="#/graphs" data-route="graphs">Graphs</a>
+      <a href="#/solver" data-route="solver">Solver</a>
+      <a href="#/import" data-route="import">Import</a>
+    </nav>
+    <div class="nav-foot" id="nav-foot"></div>
+  </aside>
+
+  <div class="shell">
+    <header class="top">
+      <form id="filters" class="filters" autocomplete="off">
+        <label>Game
+          <select name="game">
+            <option value="NLHE">NL Hold'em</option>
+            <option value="PLO">PLO</option>
+            <option value="all">All games</option>
+          </select>
+        </label>
+        <label>Position
+          <select name="position">
+            <option value="">All</option>
+            <option>UTG</option>
+            <option>HJ</option>
+            <option>CO</option>
+            <option>BTN</option>
+            <option>SB</option>
+            <option>BB</option>
+          </select>
+        </label>
+        <label>Result
+          <select name="result">
+            <option value="">All</option>
+            <option value="won">Won</option>
+            <option value="lost">Lost</option>
+          </select>
+        </label>
+        <label>From <input type="date" name="from" /></label>
+        <label>To <input type="date" name="to" /></label>
+        <label class="grow">Search
+          <input type="search" name="q" placeholder="Hand #, cards, board…" />
+        </label>
+        <button type="submit">Apply</button>
+        <button type="button" id="reset-filters" class="ghost">Reset</button>
+      </form>
+    </header>
+    <main id="app"><div class="loading">Loading database…</div></main>
+  </div>
+  <script src="/static/js/app.js?v=gto-replay"></script>
+</body>
+</html>

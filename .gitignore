@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+data/raw/
+data/imports/*
+!data/imports/.gitkeep
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+data/solver/
+tools/texassolver/bin/
+tools/texassolver/*.zip
+_sample_hh/
+_scan_hh.py
